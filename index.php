@@ -6,6 +6,8 @@
     </head>
     <body>
         <?php
+        
+            echo "ggg" ; 
            echo 'ooo'   ; 
         ?>
     </body>
