@@ -1,7 +1,8 @@
 FROM centos:6.6
 
-RUN rpm --rebuilddb \
-	&& yum --setopt=tsflags=nodocs -y install \
+RUN rpm --rebuilddb && \
+          yum -y --setopt=tsflags=nodocs update && \
+          yum --setopt=tsflags=nodocs -y install \
 		httpd-2.2.15-54.el6.centos \
 		mod_ssl-2.2.15-54.el6.centos \
 		php-5.3.3-48.el6_8 \
