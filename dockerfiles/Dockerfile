@@ -10,19 +10,20 @@ RUN rpm --rebuilddb \
 		nfs-utils
 		
 RUN yum --setopt=tsflags=nodocs -y install \
-		php-pecl-xdebug \
+		php-pecl-xdebug.x86_64\
 		php-pecl-memcached \
 		php-pecl-memcache \
+		php-pecl-amqp\
 		php-pdo \
 		php-mssql \
 		php-mbstring \
 		php-xml \
 		php-mysql \
 		php-bcmath \
-		memcached \
-		&& rm -rf /var/cache/yum/* \
-		&& yum clean all
-
-		
+		php-mcrypt \
+		php-soap
+	    && rm -rf /var/cache/yum/* \
+        && yum clean all
+        
 EXPOSE 80
 CMD ["/usr/sbin/apachectl","-D","FOREGROUND"]
