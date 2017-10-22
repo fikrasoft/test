@@ -21,9 +21,9 @@ RUN yum --setopt=tsflags=nodocs -y install \
 		php-mysql \
 		php-bcmath \
 		php-mcrypt \
-		php-soap
-	    && rm -rf /var/cache/yum/* \
-        && yum clean all
+		php-soap \
+	        && rm -rf /var/cache/yum/* \
+                && yum clean all
         
 EXPOSE 80
 CMD ["/usr/sbin/apachectl","-D","FOREGROUND"]
